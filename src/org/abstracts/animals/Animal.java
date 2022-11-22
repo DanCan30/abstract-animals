@@ -3,6 +3,9 @@ package org.abstracts.animals;
 public abstract class Animal {
 	
 	private String name;
+
+	public abstract void talk();
+	public abstract void eat();
 	
 	public Animal(String name) {
 		setName(name);
@@ -18,6 +21,4 @@ public abstract class Animal {
 	public void sleep() {
 		System.out.println("zzzzzzzz");
 	}
-	public abstract void talk();
-	public abstract void eat();
 }
