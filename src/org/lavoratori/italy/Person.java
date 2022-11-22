@@ -7,12 +7,14 @@ import java.util.Random;
 public abstract class Person {
 
 	private String name;
-	private String surname;
+	private String role;
 	private LocalDate dateOfBirth;
 	private String agencyCode;
 
 	Random rand = new Random();
 	DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("d-M-Y");
+	
+	public abstract int getYearlyIncome();
 	
 	public Person(String name, String surname, String dateOfBirth) {
 		setName(name);
@@ -29,10 +31,10 @@ public abstract class Person {
 	}
 	
 	public void setSurname(String surname ) {
-		this.surname = surname.substring(0,1).toUpperCase() + surname.substring(1);
+		this.role = surname.substring(0,1).toUpperCase() + surname.substring(1);
 	}
 	public String getSurname() {
-		return this.surname;
+		return this.role;
 	}
 	
 	public void setDateOfBirth(String dateOfBirth) {
@@ -56,8 +58,6 @@ public abstract class Person {
 	public String getFullName() {
 		return getSurname() + " " + getName() + " (" + getAgencyCode() + ")";
 	}
-	
-	public abstract int getYearlyIncome();
 	
 	@Override
 	public String toString() {
